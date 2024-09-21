@@ -52,3 +52,15 @@ function placeOrder(customerName, orderedItems) {
     orders.push({customerName: customerName, items: orderedItems, status: "Pending"}); //adding the order to orders array
         return `Your order has been placed`;//informing user 
 }
+
+//Task 4: Create a Function to Calculate Total for an Order
+
+function calculateOrderTotal(order) {
+    let OrderAmount = order.items.reduce((total, item) =>{
+       const orderItemFound = inventory.find((inventory) => (inventory.name === item.name)); 
+       //looking for product in inventory by matching names
+       return orderItemFound ? total + (item.quantity*orderItemFound.price) : 0}, 0); 
+       //returning 0 if order does not match
+   return `Your order total is $${OrderAmount}`;
+   }
+   
