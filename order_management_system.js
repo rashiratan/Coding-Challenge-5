@@ -78,3 +78,21 @@ function completeOrder (customerName){
         //updating order status
         return `Your order was completed.`;
     }}
+
+//Task 6: Create a Function to Check Pending Orders
+
+function checkPendingOrders (){
+    let pendingOrders = orders.filter((order) => order.status === "Pending"); 
+    //filtering for pending orders
+    if(pendingOrders.length === 0) { return `No orders are pending. Great Job!`}
+    //logging no pending orders found
+    else {return pendingOrders};
+}
+
+//testing all functions (you may do this in the console too!)
+console.log(placeOrder('Random Joe', [{name: 'Espresso', quantity: 4}, {name: 'Cafe Mocha', quantity: 5}]));
+console.log(inventory);
+console.log(checkPendingOrders()); //show pending orders
+console.log(calculateOrderTotal(orders[0]));
+console.log(completeOrder('Random Joe'), orders);
+console.log(checkPendingOrders());
