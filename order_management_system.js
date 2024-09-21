@@ -63,4 +63,18 @@ function calculateOrderTotal(order) {
        //returning 0 if order does not match
    return `Your order total is $${OrderAmount}`;
    }
-   
+
+
+//Task 5: Create a Function to Mark an Order as Completed
+function completeOrder (customerName){
+    let findOrder = orders.find((order) => order.customerName === customerName); 
+    //finding customer order
+    if (!findOrder) {
+        return `Sorry, no orders were found for this customer.`; 
+        //logging error when order not found
+}
+    else {
+        findOrder.status = "Completed"; 
+        //updating order status
+        return `Your order was completed.`;
+    }}
