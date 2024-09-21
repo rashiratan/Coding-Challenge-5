@@ -22,3 +22,9 @@ let inventory = [
     }
 ];
 //initializing inventory array
+
+
+//Task 2: Create an Orders Array of Order Objects
+
+let orders=[]; 
+//creating array
